@@ -25,7 +25,7 @@ const Detailspage = () => {
     const fetchmoviedetails=async()=>{
       try {
         setLoading(true)
-       const response=await axios.get(`/${params.explore}/${params.id}`)
+       const response=await axios.get(`/${params.explore}/${params.id}?api_key=135a36eceaf004b171703e4385207c61`)
        setDeatils(response.data);
        setLoading(false)
       } catch (error) {
