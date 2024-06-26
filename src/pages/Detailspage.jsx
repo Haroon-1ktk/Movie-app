@@ -38,7 +38,7 @@ const Detailspage = () => {
      const fetchmoviecast=async()=>{
       try {
         setLoading(true)
-       const response=await axios.get(`/${params.explore}/${params.id}/credits`)
+       const response=await axios.get(`/${params.explore}/${params.id}/credits?api_key=135a36eceaf004b171703e4385207c61`)
       setMoviecast(response.data)
       setLoading(false)
       } catch (error) {
@@ -51,7 +51,7 @@ const Detailspage = () => {
      const fetchSimilar=async()=>{
       try {
         setLoading(true)
-        const response=await axios.get(`/${params.explore}/${params.id}/similar`)
+        const response=await axios.get(`/${params.explore}/${params.id}/similar?api_key=135a36eceaf004b171703e4385207c61`)
      setSimil(response.data.results)
      setLoading(false)
       } catch (error) {
@@ -64,7 +64,7 @@ const Detailspage = () => {
      const fetchRecom=async()=>{
       try {
         setLoading(true)
-        const response=await axios.get(`/${params.explore}/${params.id}/recommendations`)
+        const response=await axios.get(`/${params.explore}/${params.id}/recommendations?api_key=135a36eceaf004b171703e4385207c61`)
      setRecom(response.data.results)
      setLoading(false)
       } catch (error) {
