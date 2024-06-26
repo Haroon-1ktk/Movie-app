@@ -8,10 +8,19 @@ const Home = () => {
   const movies=useSelector((state)=>state. moviedata.bannerData);
   const [nowplayingdata,setNowplayingdata]=useState([]);
   const [toprate,setToprate]=useState([]);
+   const [trending,setTrending]=useState([]);
   const fethnowplaying=async()=>{
    try {
     const response=await axios.get('/movie/now_playing?api_key=135a36eceaf004b171703e4385207c61')
     setNowplayingdata(response.data.results)
+   } catch (error) {
+    console.log('error',error)
+   }
+  }
+   const fetchtrending=async()=>{
+   try {
+    const response=await axios.get('/movie/trending?api_key=135a36eceaf004b171703e4385207c61')
+    setTrending(response.data.results)
    } catch (error) {
     console.log('error',error)
    }
@@ -26,6 +35,7 @@ const Home = () => {
    }
   useEffect(()=>{
   fethnowplaying()
+  fetchtrending()
   fetchtoprated()
   },[])
   //carousel
@@ -33,7 +43,7 @@ const Home = () => {
   return (
     <div className=''>
       <BannerHome/>
-    <Card movies={movies} heading="Trending Shows"/>
+    <Card movies={trending} heading="Trending Shows"/>
     <Card movies={nowplayingdata} heading="Now Playing"media_type={"movies"}/>
     <Card movies={toprate} heading="Top Rated" media_type={"movies"}/>
      </div>
