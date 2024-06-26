@@ -16,7 +16,7 @@ const Explore = () => {
 useEffect(()=>{
   const fetchdiscover=async()=>{
     try {
-      const response=await axios.get(`/discover/${params.explore}`,{
+      const response=await axios.get(`/discover/${params.explore}?api_key=135a36eceaf004b171703e4385207c61`,{
         params:{
           page:pageno
         }
@@ -42,7 +42,7 @@ useEffect(()=>{
 useEffect(()=>{
   const fetchdiscover=async()=>{
     try {
-      const response=await axios.get(`/discover/${params.explore}`,{
+      const response=await axios.get(`/discover/${params.explore}?api_key=135a36eceaf004b171703e4385207c61`,{
         params:{
           page:pageno
         }
