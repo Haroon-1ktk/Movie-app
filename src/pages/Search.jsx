@@ -18,7 +18,7 @@ const Search = () => {
     const fetchSearch=async()=>{
       try {
         setLoading(true)
-        const response=await axios.get(`/search/multi`,{
+        const response=await axios.get(`/search/multi?api_key=135a36eceaf004b171703e4385207c61`,{
           params:{
             query:location?.search?.slice(3),
             page:1
