@@ -14,7 +14,7 @@ const App = () => {
   const dispatch=useDispatch();
   const fetchtrending=async()=>{
    try {
-    const response=await axios.get(`/trending/all/week`)
+    const response=await axios.get(`/trending/all/week?api_key=135a36eceaf004b171703e4385207c61`)
     dispatch( setbannerData(response.data.results))
   
    } catch (error) {
